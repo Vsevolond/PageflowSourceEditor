@@ -33,6 +33,12 @@ public enum CaptureName: Int8, CaseIterable, Sendable {
     case variableBuiltin
     case keywordReturn
     case keywordFunction
+    case functionBuiltin
+    case typeBuiltin
+    case constant
+    case constantBuiltin
+    case punctuationSpecial
+    case stringSpecial
 
     var alternate: CaptureName {
         switch self {
@@ -92,6 +98,18 @@ public enum CaptureName: Int8, CaseIterable, Sendable {
             return .keywordReturn
         case "keyword.function":
             return .keywordFunction
+        case "function.builtin":
+            return .functionBuiltin
+        case "type.builtin":
+            return .typeBuiltin
+        case "constant":
+            return .constant
+        case "constant.builtin":
+            return .constantBuiltin
+        case "punctuation.special":
+            return .punctuationSpecial
+        case "string.special":
+            return .stringSpecial
         default:
             return nil
         }
@@ -142,6 +160,18 @@ public enum CaptureName: Int8, CaseIterable, Sendable {
             return "keywordReturn"
         case .keywordFunction:
             return "keywordFunction"
+        case .functionBuiltin:
+            return "functionBuiltin"
+        case .typeBuiltin:
+            return "typeBuiltin"
+        case .constant:
+            return "constant"
+        case .constantBuiltin:
+            return "constantBuiltin"
+        case .punctuationSpecial:
+            return "punctuationSpecial"
+        case .stringSpecial:
+            return "stringSpecial"
         }
     }
 }

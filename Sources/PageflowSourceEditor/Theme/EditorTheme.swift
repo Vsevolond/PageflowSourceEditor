@@ -34,12 +34,18 @@ public struct EditorTheme: Equatable {
     public var keywords: Attribute
     public var commands: Attribute
     public var types: Attribute
+    public var builtinTypes: Attribute
     public var attributes: Attribute
     public var variables: Attribute
+    public var functions: Attribute
     public var values: Attribute
     public var numbers: Attribute
     public var strings: Attribute
+    public var specialStrings: Attribute
     public var characters: Attribute
+    public var constants: Attribute
+    public var builtinConstants: Attribute
+    public var specialPunctuation: Attribute
     public var comments: Attribute
 
     public init(
@@ -52,12 +58,18 @@ public struct EditorTheme: Equatable {
         keywords: Attribute,
         commands: Attribute,
         types: Attribute,
+        builtinTypes: Attribute,
         attributes: Attribute,
         variables: Attribute,
+        functions: Attribute,
         values: Attribute,
         numbers: Attribute,
         strings: Attribute,
+        specialStrings: Attribute,
         characters: Attribute,
+        constants: Attribute,
+        builtinConstants: Attribute,
+        specialPunctuation: Attribute,
         comments: Attribute
     ) {
         self.text = text
@@ -69,12 +81,18 @@ public struct EditorTheme: Equatable {
         self.keywords = keywords
         self.commands = commands
         self.types = types
+        self.builtinTypes = builtinTypes
         self.attributes = attributes
         self.variables = variables
+        self.functions = functions
         self.values = values
         self.numbers = numbers
         self.strings = strings
+        self.specialStrings = specialStrings
         self.characters = characters
+        self.constants = constants
+        self.builtinConstants = builtinConstants
+        self.specialPunctuation = specialPunctuation
         self.comments = comments
     }
 
@@ -88,12 +106,17 @@ public struct EditorTheme: Equatable {
             return keywords
         case .comment: return comments
         case .variable, .property: return variables
-        case .function, .method: return variables
+        case .function, .functionBuiltin, .method: return functions
         case .number, .float: return numbers
         case .string: return strings
+        case .stringSpecial: return specialStrings
         case .type: return types
+        case .typeBuiltin: return builtinTypes
         case .parameter: return variables
         case .typeAlternate: return attributes
+        case .constant: return constants
+        case .constantBuiltin: return builtinConstants
+        case .punctuationSpecial: return specialPunctuation
         default: return text
         }
     }
