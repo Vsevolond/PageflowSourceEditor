@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import CodeEditSourceEditor
-import CodeEditLanguages
+import PageflowSourceEditor
+import PageflowLanguage
 
 struct StatusBar: View {
     let fileURL: URL?

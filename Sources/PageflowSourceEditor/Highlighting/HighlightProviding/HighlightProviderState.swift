@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CodeEditLanguages
+import PageflowLanguage
 import CodeEditTextView
 import OSLog
 

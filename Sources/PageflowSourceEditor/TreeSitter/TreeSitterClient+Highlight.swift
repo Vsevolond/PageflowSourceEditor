@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftTreeSitter
-import CodeEditLanguages
+import PageflowLanguage
 
 extension TreeSitterClient {
     func queryHighlightsForRange(range: NSRange) -> [HighlightRange] {
@@ -66,11 +66,6 @@ extension TreeSitterClient {
         queryCursor.matchLimit =  Constants.matchLimit
 
         var highlights: [HighlightRange] = []
-
-        // See https://github.com/CodeEditApp/CodeEditSourceEditor/pull/228
-        if layer.id == .jsdoc {
-            highlights.append(HighlightRange(range: range, capture: .comment))
-        }
 
         highlights += highlightsFromCursor(cursor: queryCursor, includedRange: range)
 

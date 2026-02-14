@@ -8,7 +8,7 @@
 import AppKit
 import SwiftUI
 import CodeEditTextView
-import CodeEditLanguages
+import PageflowLanguage
 
 /// A SwiftUI View that provides source editing functionality.
 public struct SourceEditor: NSViewControllerRepresentable {

@@ -7,7 +7,7 @@
 
 import AppKit
 import CodeEditTextView
-import CodeEditLanguages
+import PageflowLanguage
 import SwiftUI
 import Combine
 import TextFormation

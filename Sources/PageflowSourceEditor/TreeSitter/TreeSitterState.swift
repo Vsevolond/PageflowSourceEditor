@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftTreeSitter
-import CodeEditLanguages
+import PageflowLanguage
 
 /// TreeSitterState contains the tree of language layers that make up the tree-sitter document.
 public final class TreeSitterState {

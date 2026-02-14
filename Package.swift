@@ -4,13 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "CodeEditSourceEditor",
+    name: "PageflowSourceEditor",
     platforms: [.macOS(.v13)],
     products: [
         // A source editor with useful features for code editing.
         .library(
-            name: "CodeEditSourceEditor",
-            targets: ["CodeEditSourceEditor"]
+            name: "PageflowSourceEditor",
+            targets: ["PageflowSourceEditor"]
         )
     ],
     dependencies: [
@@ -21,8 +21,8 @@ let package = Package(
         ),
         // tree-sitter languages
         .package(
-            url: "https://github.com/CodeEditApp/CodeEditLanguages.git",
-            exact: "0.1.20"
+            url: "https://github.com/Vsevolond/PageflowLanguage.git",
+            from: "0.1.0"
         ),
         // CodeEditSymbols
         .package(
@@ -38,35 +38,21 @@ let package = Package(
         .package(
             url: "https://github.com/ChimeHQ/TextFormation",
             from: "0.8.2"
-        ),
-        .package(url: "https://github.com/pointfreeco/swift-custom-dump", from: "1.0.0")
+        )
     ],
     targets: [
         // A source editor with useful features for code editing.
         .target(
-            name: "CodeEditSourceEditor",
+            name: "PageflowSourceEditor",
             dependencies: [
                 "CodeEditTextView",
-                "CodeEditLanguages",
+                "PageflowLanguage",
                 "TextFormation",
                 "CodeEditSymbols"
             ],
             plugins: [
                 .plugin(name: "SwiftLint", package: "SwiftLintPlugin")
             ]
-        ),
-
-        // Tests for the source editor
-        .testTarget(
-            name: "CodeEditSourceEditorTests",
-            dependencies: [
-                "CodeEditSourceEditor",
-                "CodeEditLanguages",
-                .product(name: "CustomDump", package: "swift-custom-dump")
-            ],
-            plugins: [
-                .plugin(name: "SwiftLint", package: "SwiftLintPlugin")
-            ]
-        ),
+        )
     ]
 )

@@ -7,7 +7,7 @@
 
 import AppKit
 import SwiftTreeSitter
-import CodeEditLanguages
+import PageflowLanguage
 
 extension TreeSitterClient {
     static func quickHighlight(

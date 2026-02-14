@@ -7,7 +7,7 @@
 
 import Foundation
 import CodeEditTextView
-import CodeEditLanguages
+import PageflowLanguage
 import AppKit
 
 /// A single-case error that should be thrown when an operation should be retried.

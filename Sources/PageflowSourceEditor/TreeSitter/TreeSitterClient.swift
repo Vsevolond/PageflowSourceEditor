@@ -7,7 +7,7 @@
 
 import Foundation
 import CodeEditTextView
-import CodeEditLanguages
+import PageflowLanguage
 import SwiftTreeSitter
 import OSLog
 

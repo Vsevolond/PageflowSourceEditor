@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CodeEditLanguages
+import PageflowLanguage
 
 struct LanguagePicker: View {
     @Binding var language: CodeLanguage
