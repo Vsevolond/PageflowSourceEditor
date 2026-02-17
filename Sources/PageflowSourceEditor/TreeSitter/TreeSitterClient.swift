@@ -41,8 +41,8 @@ public final class TreeSitterClient: HighlightProviding {
     /// A callback used to fetch text for queries.
     var readCallback: SwiftTreeSitter.Predicate.TextProvider?
 
-    /// The internal tree-sitter layer tree object.
-    var state: TreeSitterState?
+    /// The public tree-sitter layer tree object.
+    public var state: TreeSitterState?
 
     package var executor: TreeSitterExecutor = .init()
 
