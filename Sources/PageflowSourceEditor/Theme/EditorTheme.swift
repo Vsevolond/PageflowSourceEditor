@@ -31,22 +31,20 @@ public struct EditorTheme: Equatable {
     public var background: NSColor
     public var lineHighlight: NSColor
     public var selection: NSColor
-    public var keywords: Attribute
-    public var commands: Attribute
+
+    public var blocks: Attribute
+    public var modifiers: Attribute
     public var types: Attribute
-    public var builtinTypes: Attribute
-    public var attributes: Attribute
-    public var variables: Attribute
-    public var functions: Attribute
-    public var values: Attribute
+    public var typeValues: Attribute
     public var numbers: Attribute
-    public var strings: Attribute
-    public var specialStrings: Attribute
-    public var characters: Attribute
     public var constants: Attribute
-    public var builtinConstants: Attribute
-    public var specialPunctuation: Attribute
-    public var comments: Attribute
+    public var booleans: Attribute
+    public var strings: Attribute
+    public var mathStrings: Attribute
+    public var fileStrings: Attribute
+    public var textSeparator: Attribute
+    public var textDelimiter: Attribute
+    public var mathDelimiter: Attribute
 
     public init(
         text: Attribute,
@@ -55,22 +53,19 @@ public struct EditorTheme: Equatable {
         background: NSColor,
         lineHighlight: NSColor,
         selection: NSColor,
-        keywords: Attribute,
-        commands: Attribute,
+        blocks: Attribute,
+        modifiers: Attribute,
         types: Attribute,
-        builtinTypes: Attribute,
-        attributes: Attribute,
-        variables: Attribute,
-        functions: Attribute,
-        values: Attribute,
+        typeValues: Attribute,
         numbers: Attribute,
-        strings: Attribute,
-        specialStrings: Attribute,
-        characters: Attribute,
         constants: Attribute,
-        builtinConstants: Attribute,
-        specialPunctuation: Attribute,
-        comments: Attribute
+        booleans: Attribute,
+        strings: Attribute,
+        mathStrings: Attribute,
+        fileStrings: Attribute,
+        textSeparator: Attribute,
+        textDelimiter: Attribute,
+        mathDelimiter: Attribute
     ) {
         self.text = text
         self.insertionPoint = insertionPoint
@@ -78,22 +73,19 @@ public struct EditorTheme: Equatable {
         self.background = background
         self.lineHighlight = lineHighlight
         self.selection = selection
-        self.keywords = keywords
-        self.commands = commands
+        self.blocks = blocks
+        self.modifiers = modifiers
         self.types = types
-        self.builtinTypes = builtinTypes
-        self.attributes = attributes
-        self.variables = variables
-        self.functions = functions
-        self.values = values
+        self.typeValues = typeValues
         self.numbers = numbers
-        self.strings = strings
-        self.specialStrings = specialStrings
-        self.characters = characters
         self.constants = constants
-        self.builtinConstants = builtinConstants
-        self.specialPunctuation = specialPunctuation
-        self.comments = comments
+        self.booleans = booleans
+        self.strings = strings
+        self.mathStrings = mathStrings
+        self.fileStrings = fileStrings
+        self.textSeparator = textSeparator
+        self.textDelimiter = textDelimiter
+        self.mathDelimiter = mathDelimiter
     }
 
     /// Maps a capture type to the attributes for that capture determined by the theme.
@@ -101,22 +93,19 @@ public struct EditorTheme: Equatable {
     /// - Returns: Theme attributes for the capture.
     private func mapCapture(_ capture: CaptureName?) -> Attribute {
         switch capture {
-        case .include, .constructor, .keyword, .boolean, .variableBuiltin,
-                .keywordReturn, .keywordFunction, .repeat, .conditional, .tag:
-            return keywords
-        case .comment: return comments
-        case .variable, .property: return variables
-        case .function, .functionBuiltin, .method: return functions
-        case .number, .float: return numbers
-        case .string: return strings
-        case .stringSpecial: return specialStrings
+        case .block: return blocks
+        case .modifier: return modifiers
         case .type: return types
-        case .typeBuiltin: return builtinTypes
-        case .parameter: return variables
-        case .typeAlternate: return attributes
+        case .typeValue: return typeValues
+        case .number: return numbers
         case .constant: return constants
-        case .constantBuiltin: return builtinConstants
-        case .punctuationSpecial: return specialPunctuation
+        case .boolean: return booleans
+        case .string: return strings
+        case .mathString: return mathStrings
+        case .fileString: return fileStrings
+        case .textSeparator: return textSeparator
+        case .textDelimiter: return textDelimiter
+        case .mathDelimiter: return mathDelimiter
         default: return text
         }
     }

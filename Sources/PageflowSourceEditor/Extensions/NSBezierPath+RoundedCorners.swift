@@ -25,7 +25,6 @@ extension NSBezierPath {
         public static let all: Corners = Corners(rawValue: 0b1111)
     }
 
-    // swiftlint:disable:next function_body_length
     convenience init(rect: CGRect, roundedCorners corners: Corners, cornerRadius: CGFloat) {
         self.init()
 

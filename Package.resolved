@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Vsevolond/PageflowLanguage.git",
       "state" : {
-        "revision" : "8f800212b10791d48849fdd5524d9ade3955f7ea",
-        "version" : "0.1.6"
+        "revision" : "7ebea43a789e7821e1fadcfdb15c4c4d28f6fe6a",
+        "version" : "0.1.7"
       }
     },
     {

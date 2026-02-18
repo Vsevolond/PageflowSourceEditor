@@ -13,7 +13,7 @@ import PageflowLanguage
 public final class TreeSitterState {
     private(set) var primaryLayer: CodeLanguage
     private(set) var layers: [LanguageLayer] = []
-    
+
     public var tree: Tree? {
         guard let layer = layers.first,
               let tree = layer.tree

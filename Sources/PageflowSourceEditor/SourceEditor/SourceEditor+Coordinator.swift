@@ -32,7 +32,6 @@ extension SourceEditor {
 
         func setController(_ controller: TextViewController) {
             self.controller = controller
-            // swiftlint:disable:next notification_center_detachment
             NotificationCenter.default.removeObserver(self)
             listenToTextViewNotifications(controller: controller)
             listenToCursorNotifications(controller: controller)

@@ -31,7 +31,6 @@ extension TextViewController {
         textView.undoManager?.endUndoGrouping()
     }
 
-    // swiftlint:disable cyclomatic_complexity
     /// Populates the comment cache with information about the lines within a specified range,
     /// determining whether comment characters should be inserted or removed.
     /// - Parameters:
@@ -115,7 +114,6 @@ extension TextViewController {
             lineCount: intermediateLines.count
         )
     }
-    // swiftlint:enable cyclomatic_complexity
 
     /// Calculates the shift range factor based on the counts of start and
     /// end comment characters and the number of intermediate lines.
